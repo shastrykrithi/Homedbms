@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+body {
+background-image: url("blood bank.jpg");
+//background-color:cyan;
+height: 100%;
+//background-position: center;
+background-repeat: no-repeat;
+//background-size: cover;
+
+}
+</style>
+
+<script type="text/javascript">
+function validate(){
+	//alert("function invoked....")//used for pop-ups
+	var name=document.getElementById("name").value;//used to get the value in textbox
+	var addr=document.getElementById("addr").value;
+	var phno=document.getElementById("phno").value;
+	
+	var valid=true;
+	
+	if(name==""){
+		//alert("Plz enter the name")// ';' is optinal
+		var spanNode=document.getElementById("errname")
+		var msg="<font color=red size=3>Please enter Name</font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=false;
+	}
+	else{
+		var spanNode=document.getElementById("errname")
+		var msg="<font color=red size=3></font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=true;
+	}
+	
+	if(addr==""){
+		//alert("Plz enter the name")// ';' is optinal
+		var spanNode=document.getElementById("erraddr")
+		var msg="<font color=red size=3>Please enter Address</font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=false;
+	}
+	else{
+		var spanNode=document.getElementById("erraddr")
+		var msg="<font color=red size=3></font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=true;
+	}
+	if(phno==""){
+		//alert("Plz enter the name")// ';' is optinal
+		var spanNode=document.getElementById("errphno")
+		var msg="<font color=red size=3>Please enter Phone no</font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=false;
+	}
+	else{
+		var spanNode=document.getElementById("errphno")
+		var msg="<font color=red size=3></font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=true;
+	}
+	
+	return valid;
+}
+</script>
+
+
+</head>
+<body>
+<div align="center">
+<form action="AddBranch" onSubmit="return validate()" method="post">
+<h2><b><font color=blue>BRANCH DETAILS</font></b></h2><br>
+Name <input type="text" id="name" name="bname">
+<span id="errname"></span><br><br>
+Address <input type="text" id="addr" name="baddr">
+<span id="erraddr"></span><br><br>
+Phone no. <input type="number" id="phno" name="btele">
+<span id="errphno"></span><br><br>
+
+<input type="submit" value="Insert">
+
+</form>
+</div>
+
+</body>
+</html>

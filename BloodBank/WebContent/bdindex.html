@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+
+
+<script type="text/javascript">
+function validate(){
+	//alert("function invoked....")//used for pop-ups
+	var did=document.getElementById("did").value;//used to get the value in textbox
+	var bid=document.getElementById("bid").value;
+	var bgp=document.getElementById("bgp").value;
+	var amt=document.getElementById("amt").value;
+	
+	var valid=true;
+	
+	if(did==""){
+		//alert("Plz enter the name")// ';' is optinal
+		var spanNode=document.getElementById("errDid")
+		var msg="<font color=red size=3>Please enter Name</font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=false;
+	}
+	else{
+		var spanNode=document.getElementById("errDid")
+		var msg="<font color=red size=3></font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=true;
+	}
+	if(bid==""){
+		//alert("Plz enter the email");
+		var spanNode1=document.getElementById("errBid")
+		var msg="<font color=red size=3>Please enter Age</font>";
+		spanNode1.innerHTML=msg;
+		//return false;
+		valid=false;
+	}
+	else{
+		var spanNode1=document.getElementById("errBid")
+		var msg="<font color=red size=3></font>";
+		spanNode1.innerHTML=msg;
+		//return false;
+		valid=true;
+	}
+	if(bgp==""){
+		//alert("Plz enter the name")// ';' is optinal
+		var spanNode=document.getElementById("errbgp")
+		var msg="<font color=red size=3>Please enter Blood group</font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=false;
+	}
+	else{
+		var spanNode=document.getElementById("errbgp")
+		var msg="<font color=red size=3></font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=true;
+	}
+	if(amt==""){
+		//alert("Plz enter the name")// ';' is optinal
+		var spanNode=document.getElementById("errAmt")
+		var msg="<font color=red size=3>Please enter Blood group</font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=false;
+	}
+	else{
+		var spanNode=document.getElementById("errAmt")
+		var msg="<font color=red size=3></font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=true;
+	}
+	
+	return valid;
+}
+</script>
+
+
+</head>
+<body>
+<div align="center" valign="bottom">
+<img alt="" src="blood-donation.jpg" width=200 heigth=200>
+<form action="BloodDonation" onSubmit="return validate()" method="post">
+
+<h2><b>Blood Donation Details</b></h2><br>
+Donor Id <input type="number" id="did" name="did">
+<span id="errDid"></span><br><br>
+Branch Id <input type="number" id="bid" name="bid">
+<span id="errBid"></span><br><br>
+Blood Group <input type="text" id="bgp" name="bgp">
+<span id="errbgp"></span><br><br>
+Amount of blood(in ml) <input type="number" id="amt" name="amt">
+<span id="errAmt"></span><br><br>
+
+<input type="submit" value="Register">
+
+</form>
+</div>
+
+</body>
+</html>

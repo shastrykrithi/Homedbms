@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+body {
+background-image: url("donate blood.jpg");
+height: 50%;
+//background-position: center;
+background-repeat: no-repeat;
+//background-size: cover;
+
+}
+</style>
+
+
+<script type="text/javascript">
+function validate(){
+	//alert("function invoked....")//used for pop-ups
+	var name=document.getElementById("name").value;//used to get the value in textbox
+	var age=document.getElementById("age").value;
+	var addr=document.getElementById("addr").value;
+	var phno=document.getElementById("phno").value;
+	var bgp=document.getElementById("bgp").value;
+	
+	var valid=true;
+	
+	if(name==""){
+		//alert("Plz enter the name")// ';' is optinal
+		var spanNode=document.getElementById("errname")
+		var msg="<font color=red size=3>Please enter Name</font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=false;
+	}
+	else{
+		var spanNode=document.getElementById("errname")
+		var msg="<font color=red size=3></font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=true;
+	}
+	if(age==""){
+		//alert("Plz enter the email");
+		var spanNode1=document.getElementById("errage")
+		var msg="<font color=red size=3>Please enter Age</font>";
+		spanNode1.innerHTML=msg;
+		//return false;
+		valid=false;
+	}
+	else{
+		if(age<18){
+			var spanNode1=document.getElementById("errage")
+			var msg="<font color=red size=3>Age cannot be less than 18</font>";
+			spanNode1.innerHTML=msg;
+			valid=false;
+		}
+		else{
+		var spanNode1=document.getElementById("errage")
+		var msg="<font color=red size=3></font>";
+		spanNode1.innerHTML=msg;
+		//return false;
+		valid=true;
+		}
+	}
+	if(addr==""){
+		//alert("Plz enter the name")// ';' is optinal
+		var spanNode=document.getElementById("erraddr")
+		var msg="<font color=red size=3>Please enter Address</font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=false;
+	}
+	else{
+		var spanNode=document.getElementById("erraddr")
+		var msg="<font color=red size=3></font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=true;
+	}
+	if(phno==""){
+		//alert("Plz enter the name")// ';' is optinal
+		var spanNode=document.getElementById("errphno")
+		var msg="<font color=red size=3>Please enter Phone no</font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=false;
+	}
+	else{
+		var spanNode=document.getElementById("errphno")
+		var msg="<font color=red size=3></font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=true;
+	}
+	if(bgp==""){
+		//alert("Plz enter the name")// ';' is optinal
+		var spanNode=document.getElementById("errbgp")
+		var msg="<font color=red size=3>Please enter Blood group</font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=false;
+	}
+	else{
+		var spanNode=document.getElementById("errbgp")
+		var msg="<font color=red size=3></font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=true;
+	}
+	
+	return valid;
+}
+</script>
+
+
+</head>
+<body>
+<div align="center">
+<form action="AddDonor" onSubmit="return validate()" method="post">
+<h2><font color=blue><b>DONOR DETAILS</b></font></h2><br>
+Name <input type="text" id="name" name="dname">
+<span id="errname"></span><br><br>
+Age <input type="number" id="age" name="dage">
+<span id="errage"></span><br><br>
+Address <input type="text" id="addr" name="daddr">
+<span id="erraddr"></span><br><br>
+Phone no. <input type="number" id="phno" name="dtele">
+<span id="errphno"></span><br><br>
+Blood Group <input type="text" id="bgp" name="dbgp">
+<span id="errbgp"></span><br><br>
+
+<input type="submit" value="Insert">
+
+</form>
+</div>
+
+</body>
+</html>

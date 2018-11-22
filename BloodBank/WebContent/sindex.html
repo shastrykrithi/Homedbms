@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+body {
+background-image: url("blood drop.jpg");
+//height: 100%;
+//background-position: center;
+background-repeat: no-repeat;
+//background-size: cover;
+
+}
+</style>
+
+<script type="text/javascript">
+function validate(){
+	var bid=document.getElementById("bbid").value;
+	
+	var valid=true;
+	
+	if(bid==""){
+		//alert("Plz enter the name")// ';' is optinal
+		var spanNode=document.getElementById("errBid")
+		var msg="<font color=red size=3>Please enter Branch ID</font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=false;
+	}
+	else{
+		var spanNode=document.getElementById("errBid")
+		var msg="<font color=red size=3></font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=true;
+	}
+	return valid;
+}
+</script>
+</head>
+<body>
+
+<div align="center" valign="bottom">
+
+<form action="Stocks" onSubmit="return validate()" method="post">
+<font size=5>
+<br>
+Enter Branch Id <input type="text" id="bbid" name="bid">
+<span id="errBid"></span><br><br>
+<input type="submit" value="Submit">
+</font>
+</form>
+<br><br>
+<form action="BranchDetails" method="post">
+<input type="submit" value="View Branch Details">
+</form>
+
+</div>
+</body>
+</html>

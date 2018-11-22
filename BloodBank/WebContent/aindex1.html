@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function validate(){
+		//alert("function invoked....")//used for pop-ups
+		var bgp=document.getElementById("nme").value;//used to get the value in textbox
+		var loc=document.getElementById("pwd").value;
+		
+		var valid=true;
+		
+		if(bgp==""){
+			//alert("Plz enter the name")// ';' is optinal
+			var spanNode=document.getElementById("errbgp")
+			var msg="<font color=red size=3>Please enter username</font>";
+			spanNode.innerHTML=msg;
+			//return false;
+			valid=false;
+		}
+		else{
+			var spanNode=document.getElementById("errbgp")
+			var msg="<font color=red size=3></font>";
+			spanNode.innerHTML=msg;
+			//return false;
+			valid=true;
+		}
+		if(loc==""){
+			//alert("Plz enter the email");
+			var spanNode1=document.getElementById("errloc")
+			var msg="<font color=red size=3>Please enter password</font>";
+			spanNode1.innerHTML=msg;
+			//return false;
+			valid=false;
+		}
+		else{
+			var spanNode1=document.getElementById("errloc")
+			var msg="<font color=red size=3></font>";
+			spanNode1.innerHTML=msg;
+			//return false;
+			valid=true;
+		}
+		return valid;
+	}
+</script>
+</head>
+<body>
+
+<form action="Homepage" onSubmit="return validate()" method="post">
+Username <input type="text" id="nme" name="nme">
+<span id="errbgp"></span><br><br>
+Password <input type="password" id="pwd" name="pwd">
+<span id="errloc"></span><br><br>
+<input type="submit" value="Submit">
+</form>
+<br><br>
+<form action="index.html">
+<input type="submit" value="Homepage">
+</form>
+
+
+</body>
+</html>

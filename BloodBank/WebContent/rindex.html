@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+function validate(){
+	//alert("function invoked....")//used for pop-ups
+	var d1=document.getElementById("d1").value;
+	var d2=document.getElementById("d2").value;
+	
+	var valid=true;
+	
+	if(d1==""){
+		//alert("Plz enter the name")// ';' is optinal
+		var spanNode=document.getElementById("errd1")
+		var msg="<font color=brown size=3>Please enter date1</font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=false;
+	}
+	else{
+		var spanNode=document.getElementById("errd1")
+		var msg="<font color=brown size=3></font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=true;
+	}
+	if(d2==""){
+		//alert("Plz enter the name")// ';' is optinal
+		var spanNode=document.getElementById("errd2")
+		var msg="<font color=brown size=3>Please enter date2</font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=false;
+	}
+	else{
+		var spanNode=document.getElementById("errd2")
+		var msg="<font color=brown size=3></font>";
+		spanNode.innerHTML=msg;
+		//return false;
+		valid=true;
+	}
+	return valid;
+}
+</script>
+</head>
+<body>
+<form action="Reports1" onSubmit="return validate()" method="post">
+<font color=red size=4>
+Enter the dates to generate reports
+</font>
+<br><br>
+Enter date1 : <input type="text" name="date1" id="d1">
+<span id="errd1">(yyyy-mm-dd)</span><br><br>
+Enter date2 : <input type="text" name="date2" id="d2">
+<span id="errd2">(yyyy-mm-dd)</span><br><br>
+
+<input type="submit" value="Submit">
+</form>
+------------------------------------------------------------------
+<br>
+<br>
+<form action="Reports" method="post">
+<font color=red size=4>To generate full report </font><input type="submit" value="Full Report">
+</form>
+<br>
+------------------------------------------------------------------
+<br>
+<form action="aindex2.html">
+<input type="submit" name="id" value="Admin Homepage">
+</form>
+<br>
+<form action="aindex1.html">
+<input type="submit" name="id" value="Logout">
+</form>
+</body>
+</html>
